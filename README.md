@@ -1,6 +1,6 @@
 # moodle-tool_save_attestoodle #
 
-Recovery and clone backup tool for attestoodle
+Backup tool for Attestoodle
 
 See doc :  https://grp-attestoodle.github.io/moodle-tool_save_attestoodle/  
 
