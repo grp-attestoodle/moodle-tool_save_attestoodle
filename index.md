@@ -36,8 +36,8 @@ Donc on pourra identifier les modules de façon relative à leur position dans u
  * la position du module au sein de la section (_posr_).
  
 
-*** Format de la sauvegarde ***
+### Format de la sauvegarde ###
 La sauvegarde consistera en un fichier JSON non compressé.  
-Le stockage sur le serveur ne sera pas pris en compte, le fichier de sauvegarde sera sous la responsabilité de son détenteur, pour cela le fichier sera directement téléchargé sur le poste de l'opérateur.  
-L'intégrité de la sauvegarde sera assurée par une signature électronique contenue dans le fichier.
+Le stockage sur le serveur ne sera pas pris en compte, le fichier de sauvegarde sera sous la responsabilité de son détenteur, pour cela le fichier sera directement téléchargé sur le poste de l'opérateur, et lors de la restauration le fichier devra être téléversé.  
+L'intégrité de la sauvegarde sera assurée par une signature électronique contenue dans le fichier.  
 Les sauvegardes seront munies d'un numéro de version, de sorte à pouvoir faire évoluer le système de sauvegarde sans perdre les anciennes versions.  
