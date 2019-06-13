@@ -34,3 +34,10 @@ Donc on pourra identifier les modules de façon relative à leur position dans u
  * le nom abrégé du cours (_course_shortname_)
  * le numéro de la section au sein du cours (_section_)
  * la position du module au sein de la section (_posr_).
+ 
+
+*** Format de la sauvegarde ***
+La sauvegarde consistera en un fichier JSON non compressé.  
+Le stockage sur le serveur ne sera pas pris en compte, le fichier de sauvegarde sera sous la responsabilité de son détenteur, pour cela le fichier sera directement téléchargé sur le poste de l'opérateur.  
+L'intégrité de la sauvegarde sera assurée par une signature électronique contenue dans le fichier.
+Les sauvegardes seront munies d'un numéro de version, de sorte à pouvoir faire évoluer le système de sauvegarde sans perdre les anciennes versions.  
