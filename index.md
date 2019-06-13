@@ -1,6 +1,6 @@
 # Outil de sauvegarde/restauration clonage d'Attestoodle #
 
-## Sauvegarde ##
+## Analyse préalable ##
 
 L'objectif est de permettre la restauration des formations dans leur contexte, la sauvegarde ici ne traite pas le contexte mais uniquement la définition des formations.
 
@@ -31,6 +31,6 @@ On ne peut rien ajouter aux modules, une solution consiste à identifier les mod
 Chaque cours est constitué de sections, et chaque section porte un ensemble de modules dans leur ordre d'affichage, ainsi le module en vert sur l'illustration, peut être identifié comme étant le 3ième module de la section C dans le cours utilisé ici.
 
 Donc on pourra identifier les modules de façon relative à leur position dans un cours avec :
- * le nom abrégé du cours (course_shortname)
- * le numéro de la section au sein du cours (section)
- * la position du module au sein de la section (posr).
+ * le nom abrégé du cours (_course_shortname_)
+ * le numéro de la section au sein du cours (_section_)
+ * la position du module au sein de la section (_posr_).
