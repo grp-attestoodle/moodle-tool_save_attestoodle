@@ -24,3 +24,4 @@ La définition de la formation devra s'appuyer sur des identifiants naturels.
 
 Dans le  cas ou le contexte est préalablement restauré, les modules n'auront pas les mêmes identifiants techniques, d'où la nécessité de déterminer un identifiant naturel.
 
+On ne peut rien ajouter aux modules, une solution consiste à identifier les modules de façon relative au cours qui les portes.
