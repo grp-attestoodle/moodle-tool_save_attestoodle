@@ -4,7 +4,7 @@
 # Analyse #
 
 ## Objectif ##
-L'objectif est de permettre la restauration des formations dans leur contexte, la sauvegarde ici ne traite pas le contexte mais uniquement la définition des formations.
+La sauvegarde doit permettre la restauration des formations dans leur contexte, elle ne traite pas le contexte mais uniquement la définition des formations.
 
 On ne sauvegarde pas :
   * les cours
