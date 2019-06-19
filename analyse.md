@@ -24,6 +24,7 @@ La définition de la formation devra s'appuyer sur des identifiants naturels.
 | Formation    | Nom de la formation    |
 | Modèle d'attestation | Nom du modèle  |
 | Module (activité ou ressource) | aucun |
+| Catégories | aucun |
 
 Dans le  cas ou le contexte est préalablement restauré, les modules n'auront pas les mêmes identifiants techniques, d'où la nécessité de déterminer un identifiant naturel.
 
@@ -38,9 +39,12 @@ Donc on pourra identifier les modules de façon relative à leur position dans u
  * le numéro de la section au sein du cours (_section_)
  * la position du module au sein de la section (_posr_).
  
+**Remarque**  
+La catégorie ne sera pas reconduite via un identifiant naturel. En effet la nature de cette donnée (arborescente) ne permet pas facilement l'identification naturel, on optera donc pour faire correspondre la formation avec la catégorie ayant le même identifiant technique. Si aucune ne correspond, on associera la formation à la première catégorie trouvée.  
+_Il pourra être envisagé de développer un outil permettant le changement de catégorie d'une formation._
 
 ## Format de la sauvegarde ##
 La sauvegarde consistera en un fichier JSON non compressé.  
 Le stockage sur le serveur ne sera pas pris en compte, le fichier de sauvegarde sera sous la responsabilité de son détenteur, pour cela le fichier sera directement téléchargé sur le poste de l'opérateur, et lors de la restauration le fichier devra être téléversé.  
 L'intégrité de la sauvegarde sera assurée par une signature électronique contenue dans le fichier.  
-Les sauvegardes seront munies d'un numéro de version, de sorte à pouvoir faire évoluer le système de sauvegarde sans perdre les anciennes versions.  
+Les sauvegardes seront munies d'un numéro de version, de sorte à pouvoir exploiter les anciennes versions.  
