@@ -199,33 +199,6 @@ if ($file) {
 echo $OUTPUT->footer();
 
 /**
- * Analyzes the training, test if the formation already exists under its new name (trainingexist 0/1).
- * If the training already exists, the processing will be in error.
- * Test if the category exists otherwise offers the first category found.
- * (categoryid = id of first categ)
- *
- * @param int $training the training to be restored.
- * @param stdClass $state state structure to be filled in.
- */
-function checktraining($training, &$state) {
-    global $DB;
-    $state->trainingexist = false;
-    if ($DB->record_exists('tool_attestoodle_training', array('name' => $training->name))) {
-        $state->trainingexist = true;
-    }
-    $category = $DB->get_record('course_categories', array('id' => $training->categoryid));
-    if (isset($category->name)) {
-        $state->category = $category->name;
-    } else {
-        $req = "select min(id) as id from {course_categories}";
-        $categoryid = $DB->get_record_sql($req, array());
-        $category = $DB->get_record('course_categories', array('id' => $categoryid->id));
-        $state->category = $category->name;
-        $state->categoryid = $categoryid->id;
-    }
-}
-
-/**
  * Analyzes the courses with milestones.
  * Fill in the state with the correspondence table of the courses.
  * Indicates $state->errcourse with the number of courses in error and
