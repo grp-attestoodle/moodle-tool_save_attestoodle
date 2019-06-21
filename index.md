@@ -8,4 +8,4 @@
 
 ## [Procédure de restauration](restaure.md)
 
-## Procédure de clonage ##
+## [Procédure de clonage](clone.md)
