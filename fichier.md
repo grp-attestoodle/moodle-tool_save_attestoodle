@@ -44,4 +44,16 @@ Le userid sera remplacé par celui de l'opérateur de la sauvegarde, et les date
 Les mêmes données que celles de la table tool_attestoodle_tpl_detail.  
 __L'enregistrement de type 'background' sera ignoré, puisque l'image n'est pas transportée ici.__
 
+### Pour les apprenants ###
 
+![apprenant](https://user-images.githubusercontent.com/26385729/59908679-3f105a00-940e-11e9-9a69-5d5ba9e8cf7f.png)
+
+On dispose des informations de la table tool_attestoodle_learner plus l'identification naturelle des apprenants (leur email).  
+Évidemment le _trainingid_ sera remplacé par celui de la formation créée.
+
+
+### Pour les personnalisations des modèles d'attestation par apprenant ###
+
+![person](https://user-images.githubusercontent.com/26385729/59908878-b3e39400-940e-11e9-96e8-4ecce881af6c.png)
+
+Informations identiques à celles de la table tool_attestoodle_user_style, le modèle n'est pas identifié de façon naturel ici, on ne prendra donc en considération uniquement les exclusions de la génération d'attestation (enablecertificat == 0).
