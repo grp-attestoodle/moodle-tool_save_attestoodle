@@ -1,8 +1,8 @@
 # backup attestoodle #
 
-TODO Describe the plugin shortly here.
+Backup tool for Attestoodle
 
-TODO Provide more detailed description here.
+See doc :  https://grp-attestoodle.github.io/moodle-tool_save_attestoodle/ 
 
 ## License ##
 
