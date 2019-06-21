@@ -1,3 +1,5 @@
+[Retour](index.md)
+
 ## Le fichier de sauvegarde ##
 Le fichier de sauvegarde se nomme formation_{$trainingid}.json  
 **Exemple**  
@@ -57,3 +59,5 @@ On dispose des informations de la table tool_attestoodle_learner plus l'identifi
 ![person](https://user-images.githubusercontent.com/26385729/59908878-b3e39400-940e-11e9-96e8-4ecce881af6c.png)
 
 Informations identiques à celles de la table tool_attestoodle_user_style, le modèle n'est pas identifié de façon naturel ici, on ne prendra donc en considération uniquement les exclusions de la génération d'attestation (enablecertificat == 0).
+
+[Retour](index.md)
