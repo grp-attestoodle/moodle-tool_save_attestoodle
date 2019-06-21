@@ -1,4 +1,4 @@
-<p align="right"><a href="./index"> Retour </a></p>
+[Retour](analyse.md)
 
 
 # Analyse #
