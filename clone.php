@@ -94,87 +94,88 @@ if ($file) {
             return;
         }
         // Create training.
-        $dataobject = new \stdClass();
-        $dataobject->name = $training->name;
+        $record = new \stdClass();
+        $record->name = $training->name;
         $categ = $training->categoryid;
+
         if (isset($state->categoryid)) {
-            $dataobject->categoryid = $state->categoryid;
+            $record->categoryid = $state->categoryid;
             $categ = $state->categoryid;
         } else {
-            $dataobject->categoryid = $training->categoryid;
+            $record->categoryid = $training->categoryid;
         }
 
-        $dataobject->startdate = $training->startdate;
-        $dataobject->enddate = $training->enddate;
-        $dataobject->duration = $training->duration;
-        $dataobject->nbautolaunch = $training->nbautolaunch;
-        $dataobject->nextlaunch = $training->nextlaunch;
-        $dataobject->checklearner = $training->checklearner;
+        $record->startdate = $training->startdate;
+        $record->enddate = $training->enddate;
+        $record->duration = $training->duration;
+        $record->nbautolaunch = $training->nbautolaunch;
+        $record->nextlaunch = $training->nextlaunch;
+        $record->checklearner = $training->checklearner;
 
-        $idtraining = $DB->insert_record('tool_attestoodle_training', $dataobject);
+        $idtraining = $DB->insert_record('tool_attestoodle_training', $record);
 
         foreach ($milestones as $milestone) {
             $moduleid = $state->tabactivities[$milestone->moduleid];
             if ($moduleid != -1) {
-                $dataobject = new \stdClass();
-                $dataobject->creditedtime = $milestone->creditedtime;
-                $dataobject->moduleid = $moduleid;
-                $dataobject->trainingid = $idtraining;
-                $dataobject->timemodified = $milestone->timemodified;
+                $record = new \stdClass();
+                $record->creditedtime = $milestone->creditedtime;
+                $record->moduleid = $moduleid;
+                $record->trainingid = $idtraining;
+                $record->timemodified = $milestone->timemodified;
                 $courseid = $state->courses[$milestone->course];
-                $dataobject->course = $courseid;
-                $dataobject->name = $milestone->name;
-                $DB->insert_record('tool_attestoodle_milestone', $dataobject);
+                $record->course = $courseid;
+                $record->name = $milestone->name;
+                $DB->insert_record('tool_attestoodle_milestone', $record);
             }
         }
 
         // Template exist ?
         if ($state->templateid != -1) {
-            $dataobject = new \stdClass();
-            $dataobject->trainingid = $idtraining;
-            $dataobject->templateid = $state->templateid;
+            $record = new \stdClass();
+            $record->trainingid = $idtraining;
+            $record->templateid = $state->templateid;
             $idtemplate = $state->templateid;
-            $dataobject->grpcriteria1 = $templaterel->grpcriteria1;
-            $dataobject->grpcriteria2 = $templaterel->grpcriteria2;
-            $DB->insert_record('tool_attestoodle_train_style', $dataobject);
+            $record->grpcriteria1 = $templaterel->grpcriteria1;
+            $record->grpcriteria2 = $templaterel->grpcriteria2;
+            $DB->insert_record('tool_attestoodle_train_style', $record);
             // Replace the model ?
             if (isset($datas->settemplate)) {
                 $req = "delete from {tool_attestoodle_tpl_detail} where templateid = :templateid and type != 'background'";
                 $DB->execute($req, array('templateid' => $state->templateid));
                 foreach ($templatedetail as $detail) {
                     if ($detail->type != 'background') {
-                        $dataobject = new \stdClass();
-                        $dataobject->templateid = $state->templateid;
-                        $dataobject->type = $detail->type;
-                        $dataobject->data = $detail->data;
-                        $DB->insert_record('tool_attestoodle_tpl_detail', $dataobject);
+                        $record = new \stdClass();
+                        $record->templateid = $state->templateid;
+                        $record->type = $detail->type;
+                        $record->data = $detail->data;
+                        $DB->insert_record('tool_attestoodle_tpl_detail', $record);
                     }
                 }
             }
         } else {
             // Create template.
-            $dataobject = new \stdClass();
-            $dataobject->name = $template->name;
-            $dataobject->timecreated = \time();
-            $dataobject->userid = $USER->id;
-            $dataobject->timemodified = \time();
-            $idtemplate = $DB->insert_record('tool_attestoodle_template', $dataobject);
+            $record = new \stdClass();
+            $record->name = $template->name;
+            $record->timecreated = \time();
+            $record->userid = $USER->id;
+            $record->timemodified = \time();
+            $idtemplate = $DB->insert_record('tool_attestoodle_template', $record);
             // Create template's details, except the background image.
             foreach ($templatedetail as $detail) {
                 if ($detail->type != 'background') {
-                    $dataobject = new \stdClass();
-                    $dataobject->templateid = $idtemplate;
-                    $dataobject->type = $detail->type;
-                    $dataobject->data = $detail->data;
-                    $DB->insert_record('tool_attestoodle_tpl_detail', $dataobject);
+                    $record = new \stdClass();
+                    $record->templateid = $idtemplate;
+                    $record->type = $detail->type;
+                    $record->data = $detail->data;
+                    $DB->insert_record('tool_attestoodle_tpl_detail', $record);
                 }
             }
-            $dataobject = new \stdClass();
-            $dataobject->trainingid = $idtraining;
-            $dataobject->templateid = $idtemplate;
-            $dataobject->grpcriteria1 = $templaterel->grpcriteria1;
-            $dataobject->grpcriteria2 = $templaterel->grpcriteria2;
-            $DB->insert_record('tool_attestoodle_train_style', $dataobject);
+            $record = new \stdClass();
+            $record->trainingid = $idtraining;
+            $record->templateid = $idtemplate;
+            $record->grpcriteria1 = $templaterel->grpcriteria1;
+            $record->grpcriteria2 = $templaterel->grpcriteria2;
+            $DB->insert_record('tool_attestoodle_train_style', $record);
         }
 
         $redirecturl = new \moodle_url('/admin/tool/attestoodle/index.php',
