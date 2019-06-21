@@ -354,3 +354,19 @@ function checkactivities($milestones, &$state) {
     $state->erractiv = $nberractiv;
     $state->tabactivities = $newtab;
 }
+
+/**
+ * Test if the attestation model exists (based on its name) and establish the
+ * correspondence of the identifier $state->templateid = newID or = -1.
+ * @param stdClass $template Model whose correspondence is being sought.
+ * @param stdClass $state state structure to be filled in.
+ */
+function checktemplate($template, &$state) {
+    global $DB;
+    $templatedb = $DB->get_record('tool_attestoodle_template', array('name' => $template->name));
+    if (isset($templatedb->id)) {
+        $state->templateid = $templatedb->id;
+    } else {
+        $state->templateid = -1;
+    }
+}
