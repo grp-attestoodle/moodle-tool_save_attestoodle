@@ -36,6 +36,7 @@ require_once($CFG->dirroot . '/repository/lib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class clone_analyse_form extends moodleform {
+
     /**
      * Method automatically called when the form is instanciated. It defines
      * all the elements (inputs, titles, buttons, ...) in the form.
