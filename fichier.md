@@ -25,3 +25,16 @@ La catégorie de rattachement de la formation reste identifiée avec un identifi
 ![jalon](https://user-images.githubusercontent.com/26385729/59907600-bf818b80-940b-11e9-819c-0c39ef862db7.png)
 
 Chaque enregistrement est enrichit de course_shortname, section et posr qui constituent l'identification relative du module jalon.
+
+### Pour la relation Formation - Modèle d'attestation ###
+
+![relatmodform](https://user-images.githubusercontent.com/26385729/59907915-75e57080-940c-11e9-906b-2f3d93412832.png)
+
+On retrouve exactement les mêmes informations qu'en table tool_attestoodle_train_style.
+
+### Pour la définition du modèle d'attestation ###
+![model](https://user-images.githubusercontent.com/26385729/59908079-d96f9e00-940c-11e9-91cf-aac6db1c8472.png)
+
+Les modèles disposent de 'name' comme identifiant naturel, lorsqu'un modèle n'existe pas il sera créé, sinon l'opérateur aura la possibilité de remplacer le modèle par celui de la sauvegarde.  
+Le userid sera remplacé par celui de l'opérateur de la sauvegarde, et les dates correspondront à la date de création.
+
