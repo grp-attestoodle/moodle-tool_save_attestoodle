@@ -30,5 +30,5 @@ $plugin->version = 2019062101;
 $plugin->requires = 2012112900;
 $plugin->maturity = MATURITY_ALPHA;
 $plugin->dependencies = [
-    'tool_attestoodle' => 2019061101,
+    'tool_attestoodle' => 2019061001,
 ];
