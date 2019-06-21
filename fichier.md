@@ -38,3 +38,10 @@ On retrouve exactement les mêmes informations qu'en table tool_attestoodle_trai
 Les modèles disposent de 'name' comme identifiant naturel, lorsqu'un modèle n'existe pas il sera créé, sinon l'opérateur aura la possibilité de remplacer le modèle par celui de la sauvegarde.  
 Le userid sera remplacé par celui de l'opérateur de la sauvegarde, et les dates correspondront à la date de création.
 
+### Pour les éléments du modèle d'attestation ###
+![detail](https://user-images.githubusercontent.com/26385729/59908411-9f52cc00-940d-11e9-84bc-5b570e759569.png)
+
+Les mêmes données que celles de la table tool_attestoodle_tpl_detail.  
+__L'enregistrement de type 'background' sera ignoré, puisque l'image n'est pas transportée ici.__
+
+
