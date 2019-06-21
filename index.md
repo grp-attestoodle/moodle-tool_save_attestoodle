@@ -2,6 +2,7 @@
 
 ## [Analyse préalable](analyse.md)
 
-## Le fichier de sauvegarde ##
+## [Le fichier de sauvegarde](fichier.md)
+
 ## Procédure de restauration ##
 ## Procédure de clonage ##
