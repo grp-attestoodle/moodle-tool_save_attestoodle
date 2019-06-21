@@ -1,3 +1,5 @@
+[Retour](index.md)
+
 ## Procédure de sauvegarde ##
 
 La sauvegarde s'effectue à partir de la page de paramétrage d'une formation.
@@ -14,3 +16,6 @@ Vous pouvez renommer le fichier, mais vous de **devez pas modifier son contenu**
 rendant la sauvegarde inexploitable !!  
 
 ![restaur5_err](https://user-images.githubusercontent.com/26385729/59921679-c372d500-942e-11e9-90a5-dcba2b22e64e.png)
+
+
+[Retour](index.md)
