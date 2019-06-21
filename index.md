@@ -4,7 +4,8 @@
 
 ## [Le fichier de sauvegarde](fichier.md)
 
-## [Procédure de auvegarde](sauvegarde.md)
+## [Procédure de sauvegarde](sauvegarde.md)
 
-## Procédure de restauration ##
+## [Procédure de restauration](restaure.md)
+
 ## Procédure de clonage ##
