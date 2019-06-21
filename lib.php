@@ -314,3 +314,43 @@ function checktraining($training, &$state) {
         $state->categoryid = $categoryid->id;
     }
 }
+
+/**
+ * For each activity of the training courses, find the id of the activity corresponding to (section,posR).
+ * Fill in $state->erractiv with the number of activities in error (no correspondence).
+ * Fill in the activity mapping table $state->tabactivities[oldID] = newID.
+ *
+ * @param stdClass $milestones All the milestones to be tested.
+ * @param stdClass $state state structure to be filled in.
+ */
+function checkactivities($milestones, &$state) {
+    global $DB;
+    $newtab = array();
+    $tabcourse = $state->courses;
+    $nberractiv = 0;
+    foreach ($milestones as $milestone) {
+        $idcourse = $tabcourse[$milestone->course];
+        $ok = false;
+        if ($idcourse != -1) {
+            $rec = $DB->get_record('course_sections', array('course' => $idcourse, 'section' => $milestone->section));
+            if (isset($rec->sequence)) {
+                $elements = explode(",", $rec->sequence);
+                if (isset($elements[$milestone->posr]) && !empty($elements[$milestone->posr])) {
+                    $activ = $DB->get_record('course_modules', array('id' => $elements[$milestone->posr]));
+                    if ($activ->completion > 0 && $activ->deletioninprogress == 0) {
+                        $newtab[$milestone->moduleid] = $elements[$milestone->posr];
+                        $ok = true;
+                    } else {
+                        $state->erractivit = $activ;
+                    }
+                }
+            }
+        }
+        if (!$ok) {
+            $newtab[$milestone->moduleid] = -1;
+            $nberractiv ++;
+        }
+    }
+    $state->erractiv = $nberractiv;
+    $state->tabactivities = $newtab;
+}
