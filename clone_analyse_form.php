@@ -36,7 +36,6 @@ require_once($CFG->dirroot . '/repository/lib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class clone_analyse_form extends moodleform {
-
     /**
      * Method automatically called when the form is instanciated. It defines
      * all the elements (inputs, titles, buttons, ...) in the form.
@@ -45,10 +44,7 @@ class clone_analyse_form extends moodleform {
         $mform    = $this->_form;
 
         $training = $this->_customdata['training'];
-        $milestones = $this->_customdata['milestones'];
         $template = $this->_customdata['template'];
-        $templatedetail = $this->_customdata['templatedetail'];
-        $templaterel = $this->_customdata['templaterel'];
         $state = $this->_customdata['state'];
 
         $mform->addElement('static', 'iddescription', get_string('trainingname', 'tool_save_attestoodle'), $training->name);

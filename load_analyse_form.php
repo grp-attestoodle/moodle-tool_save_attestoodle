@@ -42,12 +42,7 @@ class load_analyse_form extends moodleform {
     protected function definition() {
         $mform    = $this->_form;
         $training = $this->_customdata['training'];
-        $milestones = $this->_customdata['milestones'];
         $template = $this->_customdata['template'];
-        $templatedetail = $this->_customdata['templatedetail'];
-        $templaterel = $this->_customdata['templaterel'];
-        $learners = $this->_customdata['learners'];
-        $templateusers = $this->_customdata['templateusers'];
         $state = $this->_customdata['state'];
 
         $mform->addElement('static', 'iddescription', get_string('trainingname', 'tool_save_attestoodle'), $training->name);

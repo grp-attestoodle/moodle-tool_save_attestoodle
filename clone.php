@@ -79,10 +79,7 @@ if ($file) {
     $mform = new clone_analyse_form($url,
                                     array(
                                             'training' => $training,
-                                            'milestones' => $milestones,
                                             'template' => $template,
-                                            'templatedetail' => $templatedetail,
-                                            'templaterel' => $templaterel,
                                             'state' => $state
                                           ) );
 
@@ -106,6 +103,7 @@ if ($file) {
         } else {
             $dataobject->categoryid = $training->categoryid;
         }
+
         $dataobject->startdate = $training->startdate;
         $dataobject->enddate = $training->enddate;
         $dataobject->duration = $training->duration;
@@ -115,13 +113,12 @@ if ($file) {
 
         $idtraining = $DB->insert_record('tool_attestoodle_training', $dataobject);
 
-        // Milestones.
         foreach ($milestones as $milestone) {
-            $cmid = $state->tabactivities[$milestone->moduleid];
-            if ($cmid != -1) {
+            $moduleid = $state->tabactivities[$milestone->moduleid];
+            if ($moduleid != -1) {
                 $dataobject = new \stdClass();
                 $dataobject->creditedtime = $milestone->creditedtime;
-                $dataobject->moduleid = $cmid;
+                $dataobject->moduleid = $moduleid;
                 $dataobject->trainingid = $idtraining;
                 $dataobject->timemodified = $milestone->timemodified;
                 $courseid = $state->courses[$milestone->course];
@@ -191,11 +188,13 @@ if ($file) {
     $mform->display();
     var_dump($state->erractivit);
 } else {
+
     $redirecturl = new \moodle_url('/user/profile.php', ['id' => $USER->id]);
     $message = get_string('errreadfile', 'tool_save_attestoodle', $filename);
     redirect($redirecturl, $message, null, \core\output\notification::NOTIFY_INFO);
     return;
 }
+
 echo $OUTPUT->footer();
 
 /**
