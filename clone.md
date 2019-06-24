@@ -24,8 +24,11 @@ Ce lien mène à la page suivante :
 
 Une fois le fichier téléversé, il faut renseigner le _suffixe_ puis cliquer sur "Cloner"
 
-
+![cloner2](https://user-images.githubusercontent.com/26385729/60002500-0ddf9600-9669-11e9-8638-0c8f8a4b1c70.png)
 
 Lorsque le clonage est terminé, il est possible de modifier le nom abrégé des cours.
+
+![cloner3](https://user-images.githubusercontent.com/26385729/60002593-39fb1700-9669-11e9-88ce-d52a8b5b9356.png)
+
 
 [Retour](index.md)
