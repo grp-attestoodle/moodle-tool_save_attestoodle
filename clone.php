@@ -187,7 +187,6 @@ if ($file) {
     }
     echo $OUTPUT->header();
     $mform->display();
-    var_dump($state->erractivit);
 } else {
 
     $redirecturl = new \moodle_url('/user/profile.php', ['id' => $USER->id]);
