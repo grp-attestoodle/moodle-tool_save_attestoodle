@@ -57,6 +57,7 @@ class loadform extends moodleform {
         $mform->addGroup($actionbuttongroup1, 'actionbuttongroup1', '', ' ', false);
 
         $mform->addElement('text', 'suffix', get_string('suffix', 'tool_save_attestoodle'), array("size" => 10));
+        $mform->setType('suffix', PARAM_RAW);
 
         $actionbuttongroup2 = array();
         $actionbuttongroup2[] =& $mform->createElement('submit', 'cloner', get_string('clone', 'tool_save_attestoodle'),

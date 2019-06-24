@@ -43,7 +43,7 @@ $PAGE->set_heading($title);
 $mform = new loadform();
 $filename = "none";
 if ($fromform = $mform->get_data()) {
-    if ($fromform->cancelbtn || $fromform->cancel2) {
+    if (isset($fromform->cancelbtn) || isset($fromform->cancel2)) {
         $redirecturl = new \moodle_url('/user/profile.php', ['id' => $USER->id]);
         $message = get_string('restorecancel', 'tool_save_attestoodle');
         redirect($redirecturl, $message, null, \core\output\notification::NOTIFY_INFO);
@@ -80,18 +80,18 @@ if ($fromform = $mform->get_data()) {
                 }
             }
 
-            if (!$stop && $fromform->restore) {
+            if (!$stop && isset($fromform->restore)) {
                 $redirecturl = new \moodle_url('/admin/tool/save_attestoodle/restored.php',
                     array("filename" => $filename));
                 redirect($redirecturl);
                 return;
             }
-            if (!$stop && $fromform->cloner && empty($fromform->suffix)) {
+            if (!$stop && isset($fromform->cloner) && empty($fromform->suffix)) {
                 $stop = true;
                 \core\notification::error(get_string('error_suffix', 'tool_save_attestoodle'));
             }
 
-            if (!$stop && $fromform->cloner) {
+            if (!$stop && isset($fromform->cloner)) {
                 $redirecturl = new \moodle_url('/admin/tool/save_attestoodle/clone.php',
                     array("filename" => $filename, "suffix" => $fromform->suffix));
                 redirect($redirecturl);
