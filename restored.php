@@ -130,7 +130,7 @@ if ($file) {
             $DB->delete_records('tool_attestoodle_learner', array('trainingid' => $idtraining));
             $DB->delete_records('tool_attestoodle_user_style', array('trainingid' => $idtraining));
             // Delete model.
-            $DB->delete_record('tool_attestoodle_train_style', array('trainingid' => $idtraining));
+            $DB->delete_records('tool_attestoodle_train_style', array('trainingid' => $idtraining));
         } else {
             $idtraining = $DB->insert_record('tool_attestoodle_training', $dataobject);
         }
