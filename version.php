@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tool_save_attestoodle';
 $plugin->release = '0.1.2';
-$plugin->version = 2020071502;
+$plugin->version = 2021052101;
 $plugin->requires = 2012112900;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = [
