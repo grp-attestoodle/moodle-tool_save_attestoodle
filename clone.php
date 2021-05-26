@@ -36,9 +36,8 @@ $context = context_system::instance();
 $PAGE->set_context($context);
 require_login();
 global $USER;
-$thisurl = new moodle_url(dirname(__FILE__) . '/clone.php', ['filename' => $filename, 'suffix' => $suffix]);
 $url = new \moodle_url('/admin/tool/save_attestoodle/clone.php', ['filename' => $filename, 'suffix' => $suffix]);
-$PAGE->set_url($thisurl);
+$PAGE->set_url($url);
 
 $title = get_string('titleclonevalide', 'tool_save_attestoodle');
 $PAGE->set_title($title);

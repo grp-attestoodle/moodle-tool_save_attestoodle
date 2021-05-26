@@ -34,7 +34,7 @@ $context = context_system::instance();
 $PAGE->set_context($context);
 require_login();
 global $USER;
-$PAGE->set_url(new moodle_url(dirname(__FILE__) . '/load.php', [] ));
+$PAGE->set_url(new moodle_url('/admin/tool/save_attestoodle/load.php', [] ));
 
 $title = get_string('titlerestore', 'tool_save_attestoodle');
 $PAGE->set_title($title);
