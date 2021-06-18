@@ -4,6 +4,11 @@ Backup tool for Attestoodle
 
 See doc :  https://grp-attestoodle.github.io/moodle-tool_save_attestoodle/ 
 
+
+Compatibility : Moodle 3.8, 3.9, 3.10, 3.11
+
+Plugin type : admin tool
+
 ## License ##
 
 2019 Universite du Mans
